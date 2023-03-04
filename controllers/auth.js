@@ -74,9 +74,11 @@ const revalidarToken = async (req, res) => {
   const uid = req.id
   const name = req.name
   //generar un nuevo token
-    const token = await generarJWT(uid, name)
+  const token = await generarJWT(uid, name)
   res.json({
     ok: true,
+    uid,
+    name,
     token
   })
 }
